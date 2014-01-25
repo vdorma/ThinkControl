@@ -72,6 +72,7 @@ MainWindow::MainWindow(QWidget *parent) :
             this->mainBatInstalled(false);
 
         /* Main Battery */
+        connect(timer, SIGNAL(timeout()), batgov, SLOT(updateBatteriesState()));
         connect(batgov, SIGNAL(mainBatInstalled(bool)), this, SLOT(mainBatInstalled(bool)));
 //        connect(batgov, SIGNAL(mainBatStateChanged(QString)), this, SLOT(mainBatUpdateState(QString)));
         connect(batgov, SIGNAL(mainBatValuesChanged()), this, SLOT(mainBatRefreshValues()));
@@ -89,7 +90,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /* Timer */
     connect(timer, SIGNAL(timeout()), sensorsArray, SLOT(updateThermValues()));
-    connect(timer, SIGNAL(timeout()), batgov, SLOT(updateBatteriesState()));
 
     /* Sensors Array */
     connect(sensorsArray, SIGNAL(thermalValuesUpdated()), gov, SLOT(refresh()));

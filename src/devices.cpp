@@ -1221,7 +1221,7 @@ QString getStringValueFromFile(QString path)
     QFile f(path);
     QTextStream ts(&f);
 
-    if (f.open(QIODevice::ReadOnly))
+    if (f.exists() && f.open(QIODevice::ReadOnly))
         out = ts.readLine();
     else
         qDebug() << "Cannot open" << path;
