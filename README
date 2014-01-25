@@ -1,0 +1,18 @@
+Dependencies:
+qt4
+dbus
+libXi
+
+Steps to install:
+mkdir build
+cd build
+cmake ..
+make
+make install
+
+To run this program you need root privileges.
+Better way to give some root privileges to program is to use file capabilities.
+To give thinkctl some of this privs, run: setcap cap_dac_override+ep /path/to/thinkctl
+
+Fan and Gears icons are part of the "The Noun Project"
+licensed with CC Attribution.

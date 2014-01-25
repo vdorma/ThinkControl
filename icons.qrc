@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/Fan-48.png</file>
+        <file>icons/Gears-48.png</file>
+        <file>icons/TrackPoint.svg</file>
+        <file>icons/TouchPad.svg</file>
+    </qresource>
+</RCC>
